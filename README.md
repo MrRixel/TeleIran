@@ -1,6 +1,5 @@
-# [TeleSeed](https://telegram.me/TeleSeed)
+# [TeleIran](https://telegram.me/TeleIran)
 
-[![https://gitter.im/SEEDTEAM/TeleSeed](https://badges.gitter.im/SEEDTEAM/TeleSeed.svg)](https://gitter.im/SEEDTEAM/TeleSeed?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 **An advanced and powerful administration bot based on [yagop/telegram-bot](https://github.com/yagop/telegram-bot) licensed under the [GNU General Public License](https://github.com/SEEDTEAM/TeleSeed/blob/master/LICENSE)**.
 # Features
@@ -33,7 +32,7 @@ TeleSeed has several commands that are only usable at certain ranks.
 | Command | Description |
 |:--------|:------------|
 | [#!/]id | Returns group/SuperGroup ID or user id in pm. |
-| [#!/]teleseed | Returns bot information. |
+| [#!/]teleiran | Returns bot information. |
 
 
 ## Private Message Commands {#privmsg_commands}
