@@ -1,99 +1,288 @@
 local function run(msg, matches)
   if is_chat_msg(msg) then
-    local text = [[‌✅Commands to lock|unlock
-💭/lock|unlock link
-💭/lock|unlock member
-💭/lock|unlock name
-💭/lock|unlock bot
-💭/lock|unlock image
-💭/lock|unlock sticker
-💭/lock|unlock file 
+    local text = [[*SuperGroup Commands*
+〰〰〰〰〰〰〰〰〰〰〰〰
 
-➕
-✅Commands for control member
-💭/kick @username
-💭/ban @username
-💭/unban @username
-💭/kickme
+🔘Displays General Info 
+#info
 
-➕
-✅Group control 
-💭/rules
-💭/setrules [Text]
-💭/about
-💭/setabout [Text]
-💭/setphoto
-💭/setname [Name]
-💭/id
-💭/group settings 
-💭/getlink 
-💭/relink 
-💭/modlist
-💭/help
-💭/TeleIran
 
-➕
-✅ Group Promote  commands
-💭/spromote @username
-💭/sdemote @username
-💭/promote @username
-💭/demote @username
+🔘Returns SuperGroup Admins List
+#admins
 
-➖🔸➖🔹➖🔸➖🔹➖]]
+
+🔘Returns Group Owner
+#owner
+
+
+🔘Returns Moderators List
+#modlist
+
+
+🔘List bBots In SuperGroup
+#bots
+
+
+🔘Member Control
+#block @username
+#ban @username
+#unban @username
+#muteuser @username
+#kickme
+
+
+🔘Set SuperGroup Owner
+#setowner @username
+
+
+🔘Promote SuperGroup Moderator
+#promote @username
+
+
+🔘Demote SuperGroup Moderator
+#demote @username
+
+
+🔘Set Chat Name
+#setname
+
+
+🔘Set Chat Photo
+#setphoto
+
+
+🔘Set Chat Rules
+#setrules
+
+
+🔘Set About Section 
+#setabout
+
+
+🔘Generate Set Group Link
+#setlink
+
+
+🔘Retireives Group Link
+#link
+
+
+🔘Retrieves Chat Rules 
+#rules
+
+
+🔘Lock|Unlock Group Settings
+#lock|unlock links
+#lock|unlock sticker
+#lock|unlock bot
+#lock|unlock flood
+#lock|unlock spam
+#lock|unlock arabic
+#lock|unlock member
+#lock|unlock rtl
+#lock|unlock contacts
+#lock|unlock strict
+
+
+🔘Mute|Unmute SuperGroup
+#mute|unmute all
+#mute|unmute text
+#mute|unmute photo
+#mute|unmute video
+#mute|unmute gifs
+#mute|unmute audio
+
+
+🔘Set Flood Sensitivity
+#setflood [value]
+
+
+🔘Returns Chat Settings
+#settings
+
+
+🔘Returns Mutes Chat
+#muteslist
+
+
+🔘Returns List Muted Users
+#mutelist
+ 
+
+🔘Returns SuperGroup Ban List
+#banlist
+
+
+🔘Clean SuperGroup Info
+#clean rules
+#clean about 
+#clean modlist
+#clean mutelist
+
+
+🔘Delete Message 
+#del
+
+
+🔘Set Chat Publication
+#public yes
+#public no
+ 
+
+🔘Returns Username
+#res @username
+
+
+🔘Returns TeleIran About
+#TeleIran 
+
+〰〰〰〰〰〰〰〰〰〰〰〰
+
+✅Channel: @TeleIranTeam☢
+]],
     return text
   end
   if is_channel_msg(msg) then
-    local text = [[‌‌✅Commands to lock|unlock
-    
-💭 #lock|unlock all
-💭 #lock|unlock link
-💭 #lock|unlock member
-💭 #lock|unlock name
-💭 #lock|unlock image
-💭 #lock|unlock sticker
-💭 #lock|unlock file 
-💭 #lock|unlock bot
+    local text = [[*SuperGroup Commands*
+〰〰〰〰〰〰〰〰〰〰〰〰
+
+🔘Displays General Info 
+#info
 
 
-➕
-✅Commands for control member
-
-💭 #kick @username
-💭 #ban @username
-💭 #unban @username
-💭 #mute @username
-💭 #unmute @username
-💭 #kickme
+🔘Returns SuperGroup Admins List
+#admins
 
 
-➕
-✅Group control 
+🔘Returns Group Owner
+#owner
 
 
-💭 #setlink [Link]
-💭 #link
-💭 #about
-💭 #setabout [Text]
-💭 #setphoto
-💭 #setname [Name]
-💭 #id
-💭 #group settings 
-💭 #modlist
-💭 #help
-💭 #TeleIran
+🔘Returns Moderators List
+#modlist
 
 
-➕
-✅ Group Promote Commands
-💭 #addadmin @username
-💭 #remadmin @username
-💭 #spromote @username
-💭 #sdemote @username
-💭 #promote @username
-💭 #demote @username
+🔘List bBots In SuperGroup
+#bots
 
 
-➖🔸➖🔹➖🔸➖🔹➖]]
+🔘Member Control
+#block @username
+#ban @username
+#unban @username
+#muteuser @username
+#kickme
+
+
+🔘Set SuperGroup Owner
+#setowner @username
+
+
+🔘Promote SuperGroup Moderator
+#promote @username
+
+
+🔘Demote SuperGroup Moderator
+#demote @username
+
+
+🔘Set Chat Name
+#setname
+
+
+🔘Set Chat Photo
+#setphoto
+
+
+🔘Set Chat Rules
+#setrules
+
+
+🔘Set About Section 
+#setabout
+
+
+🔘Generate Set Group Link
+#setlink
+
+
+🔘Retireives Group Link
+#link
+
+
+🔘Retrieves Chat Rules 
+#rules
+
+
+🔘Lock|Unlock Group Settings
+#lock|unlock links
+#lock|unlock sticker
+#lock|unlock bot
+#lock|unlock flood
+#lock|unlock spam
+#lock|unlock arabic
+#lock|unlock member
+#lock|unlock rtl
+#lock|unlock contacts
+#lock|unlock strict
+
+
+🔘Mute|Unmute SuperGroup
+#mute|unmute all
+#mute|unmute text
+#mute|unmute photo
+#mute|unmute video
+#mute|unmute gifs
+#mute|unmute audio
+
+
+🔘Set Flood Sensitivity
+#setflood [value]
+
+
+🔘Returns Chat Settings
+#settings
+
+
+🔘Returns Mutes Chat
+#muteslist
+
+
+🔘Returns List Muted Users
+#mutelist
+ 
+
+🔘Returns SuperGroup Ban List
+#banlist
+
+
+🔘Clean SuperGroup Info
+#clean rules
+#clean about 
+#clean modlist
+#clean mutelist
+
+
+🔘Delete Message 
+#del
+
+
+🔘Set Chat Publication
+#public yes
+#public no
+ 
+
+🔘Returns Username
+#res @username
+
+
+🔘Returns TeleIran About
+#TeleIran 
+
+〰〰〰〰〰〰〰〰〰〰〰〰
+
+✅Channel: @TeleIranTeam☢
+]],
     return text
   else
     local text = [[aaa]]
@@ -107,7 +296,7 @@ return {
     " /help ",
   },
   patterns = {
-    "^[#!/](help)$",
+    "^[#!/](shelp)$",
   }, 
   run = run,
 }
