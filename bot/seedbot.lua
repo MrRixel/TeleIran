@@ -212,7 +212,7 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"admin",
+    "admin",
     "onservice",
     "inrealm",
     "ingroup",
@@ -463,146 +463,145 @@ will return group ban list
 
 ]],
 	help_text_super =[[
-SuperGroup Commands:
+*SuperGroup Commands*
+〰〰〰〰〰〰〰〰〰〰〰〰
 
-!info
-Displays general info about the SuperGroup
-
-!admins
-Returns SuperGroup admins list
-
-!owner
-Returns group owner
-
-!modlist
-Returns Moderators list
-
-!bots
-Lists bots in SuperGroup
-
-!who
-Lists all users in SuperGroup
-
-!block
-Kicks a user from SuperGroup
-*Adds user to blocked list*
-
-!ban
-Bans user from the SuperGroup
-
-!unban
-Unbans user from the SuperGroup
-
-!id
-Return SuperGroup ID or user id
-*For userID's: !id @username or reply !id*
-
-!id from
-Get ID of user message is forwarded from
-
-!kickme
-Kicks user from SuperGroup
-*Must be unblocked by owner or use join by pm to return*
-
-!setowner
-Sets the SuperGroup owner
-
-!promote [username|id]
-Promote a SuperGroup moderator
-
-!demote [username|id]
-Demote a SuperGroup moderator
-
-!setname
-Sets the chat name
-
-!setphoto
-Sets the chat photo
-
-!setrules
-Sets the chat rules
-
-!setabout
-Sets the about section in chat info(members list)
-
-!save [value] <text>
-Sets extra info for chat
-
-!get [value]
-Retrieves extra info for chat by value
-
-!newlink
-Generates a new group link
-
-!link
-Retireives the group link
-
-!rules
-Retrieves the chat rules
-
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Lock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: enable strict settings enforcement (violating user will be kicked)*
-
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-Unlock group settings
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: disable strict settings enforcement (violating user will not be kicked)*
-
-!mute [all|audio|gifs|photo|video|service]
-mute group message types
-*A "muted" message type is auto-deleted if posted
-
-!unmute [all|audio|gifs|photo|video|service]
-Unmute group message types
-*A "unmuted" message type is not auto-deleted if posted
-
-!setflood [value]
-Set [value] as flood sensitivity
-
-!settings
-Returns chat settings
-
-!muteslist
-Returns mutes for chat
-
-!muteuser [username]
-Mute a user in chat
-*If a muted user posts a message, the message is deleted automaically
-*only owners can mute | mods and owners can unmute
-
-!mutelist
-Returns list of muted users in chat
-
-!banlist
-Returns SuperGroup ban list
-
-!clean [rules|about|modlist|mutelist]
-
-!del
-Deletes a message by reply
-
-!public [yes|no]
-Set chat visibility in pm !chats or !chatlist commands
-
-!res [username]
-Returns users name and id by username
+🔘Displays General Info 
+#info
 
 
-!log
-Returns group logs
-*Search for kick reasons using [#RTL|#spam|#lockmember]
+🔘Returns SuperGroup Admins List
+#admins
 
-**You can use "#", "!", or "/" to begin all commands
 
-*Only owner can add members to SuperGroup
-(use invite link to invite)
+🔘Returns Group Owner
+#owner
 
-*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
 
-*Only owner can use res, setowner, promote, demote, and log commands
+🔘Returns Moderators List
+#modlist
 
+
+🔘List bBots In SuperGroup
+#bots
+
+
+🔘Member Control
+#block @username
+#ban @username
+#unban @username
+#muteuser @username
+#kickme
+
+
+🔘Set SuperGroup Owner
+#setowner @username
+
+
+🔘Promote SuperGroup Moderator
+#promote @username
+
+
+🔘Demote SuperGroup Moderator
+#demote @username
+
+
+🔘Set Chat Name
+#setname
+
+
+🔘Set Chat Photo
+#setphoto
+
+
+🔘Set Chat Rules
+#setrules
+
+
+🔘Set About Section 
+#setabout
+
+
+🔘Generate Set Group Link
+#setlink
+
+
+🔘Retireives Group Link
+#link
+
+
+🔘Retrieves Chat Rules 
+#rules
+
+
+🔘Lock|Unlock Group Settings
+#lock|unlock links
+#lock|unlock sticker
+#lock|unlock bot
+#lock|unlock flood
+#lock|unlock spam
+#lock|unlock arabic
+#lock|unlock member
+#lock|unlock rtl
+#lock|unlock contacts
+#lock|unlock strict
+
+
+🔘Mute|Unmute SuperGroup
+#mute|unmute all
+#mute|unmute text
+#mute|unmute photo
+#mute|unmute video
+#mute|unmute gifs
+#mute|unmute audio
+
+
+🔘Set Flood Sensitivity
+#setflood [value]
+
+
+🔘Returns Chat Settings
+#settings
+
+
+🔘Returns Mutes Chat
+#muteslist
+
+
+🔘Returns List Muted Users
+#mutelist
+ 
+
+🔘Returns SuperGroup Ban List
+#banlist
+
+
+🔘Clean SuperGroup Info
+#clean rules
+#clean about 
+#clean modlist
+#clean mutelist
+
+
+🔘Delete Message 
+#del
+
+
+🔘Set Chat Publication
+#public yes
+#public no
+ 
+
+🔘Returns Username
+#res @username
+
+
+🔘Returns TeleIran About
+#TeleIran 
+
+〰〰〰〰〰〰〰〰〰〰〰〰
+
+✅Channel: @TeleIranTeam☢
 ]],
   }
   serialize_to_file(config, './data/config.lua')
