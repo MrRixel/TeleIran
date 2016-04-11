@@ -241,6 +241,7 @@ function create_config( )
     "lockbot",
     "kick",
     "username",
+    "badword",
     },
     sudo_users = {112840592,212255453,214596866},--Sudo users
     moderation = {data = 'data/moderation.json'},
