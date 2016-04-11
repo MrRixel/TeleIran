@@ -171,11 +171,11 @@ return {
     "/plugins reload: reloads all plugins." },
   patterns = {
     "^[!#/]plugins$",
-    "^[!#/]plugins? (+) ([%w_%.%-]+)$",
-    "^[!#/]plugins? (-) ([%w_%.%-]+)$",
-    "^[!#/]plugins? (+) ([%w_%.%-]+) (chat)",
-    "^[!#/]plugins? (-) ([%w_%.%-]+) (chat)",
-    "^[!#/]plugins? (reload)$",
+    "^[!#/]plugin? (+) ([%w_%.%-]+)$",
+    "^[!#/]plugin? (-) ([%w_%.%-]+)$",
+    "^[!#/]plugin? (+) ([%w_%.%-]+) (chat)",
+    "^[!#/]plugin? (-) ([%w_%.%-]+) (chat)",
+    "^[!#/]plugin? (reload)$",
     },
   run = run,
   privileged = true
