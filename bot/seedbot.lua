@@ -222,8 +222,6 @@ function create_config( )
     "lockspam",
     "owners",
     "lockarabic",
-    "set",
-    "get",
     "broadcast",
     "invite",
     "all",
