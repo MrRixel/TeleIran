@@ -613,7 +613,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nLock Flood Max : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nLock Tag: "..settings.lock_tag.."\nLock Media: "..settings.lock_media
+  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nLock Flood Max : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nLock Tag: "..settings.lock_tag.."\nLock Media: "..settings.lock_media.."
   return text
 end
 
@@ -1768,7 +1768,7 @@ local function run(msg, matches)
 			end
 			if matches[2] == 'media' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked Media ")
-				return unlock_group_Media(msg, data, target)
+				return unlock_group_media(msg, data, target)
 			end
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
