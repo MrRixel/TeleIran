@@ -1,4 +1,4 @@
-antiarabic = {}-- An empty table for solving multiple kicking problem
+antitag = {}-- An empty table for solving multiple kicking problem
 
 do
 local function run(msg, matches)
@@ -29,7 +29,7 @@ local function run(msg, matches)
 		local user_id = msg.from.id
 			kick_user(user_id, chat_id)
 		end
-		antiarabic[msg.from.id] = true
+		antitag[msg.from.id] = true
     end
   end
   return
