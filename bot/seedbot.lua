@@ -239,7 +239,6 @@ function create_config( )
     "voice",
     "weather",
     "lockbot",
-    "kick",
     "username",
     "badword",
     },
