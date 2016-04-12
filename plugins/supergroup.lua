@@ -1682,7 +1682,7 @@ local function run(msg, matches)
 				return lock_group_arabic(msg, data, target)
 			end
 			if matches[2] == 'tag' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked tag ")
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tag ")
 				return lock_group_tag(msg, data, target)
 			end
 			if matches[2] == 'member' then
@@ -1730,8 +1730,8 @@ local function run(msg, matches)
 				return unlock_group_arabic(msg, data, target)
 			end
 			if matches[2] == 'tag' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked tag ")
-				return lock_group_tag(msg, data, target)
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked Tag ")
+				return unlock_group_tag(msg, data, target)
 			end
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
