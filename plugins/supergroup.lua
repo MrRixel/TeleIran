@@ -30,6 +30,7 @@ local function check_member_super(cb_extra, success, result)
 		  lock_contacts = 'no',
 		  strict = 'no',
 		  lock_tag = 'no',
+		  lock_media = 'no',
         }
       }
       save_data(_config.moderation.data, data)
@@ -294,7 +295,7 @@ local function lock_group_tag(msg, data, target)
     return
   end
   local group_arabic_lock = data[tostring(target)]['settings']['lock_tag']
-  if group_arabic_lock == 'yes' then
+  if group_tag_lock == 'yes' then
     return 'tag is already locked'
   else
     data[tostring(target)]['settings']['lock_tag'] = 'yes'
@@ -314,6 +315,34 @@ local function unlock_group_tag(msg, data, target)
     data[tostring(target)]['settings']['lock_tag'] = 'no'
     save_data(_config.moderation.data, data)
     return 'tag has been unlocked'
+  end
+end
+
+local function lock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_media']
+  if group_media_lock == 'yes' then
+    return 'Media is already locked'
+  else
+    data[tostring(target)]['settings']['lock_media'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'Media has been locked'
+  end
+end
+
+local function unlock_group_media(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_media_lock = data[tostring(target)]['settings']['lock_media']
+  if group_media_lock == 'no' then
+    return 'Media is already unlocked'
+  else
+    data[tostring(target)]['settings']['lock_media'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'Media has been unlocked'
   end
 end
 
@@ -584,7 +613,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nFlood Sensitivity : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nStrict Settings: "..settings.strict.."\nLock Tag: "..settings.lock_tag
+  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nLock Flood Max : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nLock Tag: "..settings.lock_tag.."\nLock Media: "..settings.lock_media
   return text
 end
 
@@ -1685,6 +1714,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Tag ")
 				return lock_group_tag(msg, data, target)
 			end
+			if matches[2] == 'media' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked Media ")
+				return lock_group_media(msg, data, target)
+			end
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
 				return lock_group_membermod(msg, data, target)
@@ -1732,6 +1765,10 @@ local function run(msg, matches)
 			if matches[2] == 'tag' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked Tag ")
 				return unlock_group_tag(msg, data, target)
+			end
+			if matches[2] == 'media' then
+				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked Media ")
+				return unlock_group_Media(msg, data, target)
 			end
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
