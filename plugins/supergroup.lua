@@ -19,6 +19,7 @@ local function check_member_super(cb_extra, success, result)
         settings = {
           set_name = string.gsub(msg.to.title, '_', ' '),
 		  lock_arabic = 'no',
+		  lock_tag = 'no',
 		  lock_link = "no",
           flood = 'yes',
 		  lock_spam = 'yes',
@@ -285,6 +286,34 @@ local function unlock_group_arabic(msg, data, target)
     data[tostring(target)]['settings']['lock_arabic'] = 'no'
     save_data(_config.moderation.data, data)
     return 'Arabic/Persian has been unlocked'
+  end
+end
+
+local function lock_group_tag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_arabic_lock = data[tostring(target)]['settings']['lock_tag']
+  if group_arabic_lock == 'yes' then
+    return 'tag is already locked'
+  else
+    data[tostring(target)]['settings']['lock_tag'] = 'yes'
+    save_data(_config.moderation.data, data)
+    return 'tag has been locked'
+  end
+end
+
+local function unlock_group_tag(msg, data, target)
+  if not is_momod(msg) then
+    return
+  end
+  local group_tag_lock = data[tostring(target)]['settings']['lock_tag']
+  if group_tag_lock == 'no' then
+    return 'tag is already unlocked'
+  else
+    data[tostring(target)]['settings']['lock_tag'] = 'no'
+    save_data(_config.moderation.data, data)
+    return 'tag has been unlocked'
   end
 end
 
@@ -555,7 +584,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nFlood Sensitivity : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nStrict Settings: "..settings.strict
+  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nFlood Sensitivity : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nStrict Settings: "..settings.strict.."\nLock Tag: "..settings.lock_tag
   return text
 end
 
