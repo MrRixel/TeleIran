@@ -11,7 +11,7 @@ local function run(msg, matches)
 	  if is_whitelisted(msg.from.id) then
 		return
 	  end
-      if antiarabic[msg.from.id] == true then 
+      if antitag[msg.from.id] == true then 
         return
       end
 	  if msg.to.type == 'chat' then
