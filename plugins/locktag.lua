@@ -36,12 +36,15 @@ local function run(msg, matches)
 end
 
 local function cron()
-  antiarabic = {} -- Clear antiarabic table 
+  antitag = {} -- Clear antitag table 
 end
 
 return {
   patterns = {
-    "@"
+  	
+    "(.*)@",
+    "@(.*)",
+    
     },
   run = run,
   cron = cron
