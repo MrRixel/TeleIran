@@ -613,7 +613,7 @@ end
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup Settings:\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nLock Flood Max : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nStrict Settings: "..settings.strict.."\nLock Tag: "..settings.lock_tag.."\nLock Media: "..settings.lock_media
+  local text = "SuperGroup Settings:\n\nLock links : "..settings.lock_link.."\nLock Flood: "..settings.flood.."\nLock Flood Max : "..NUM_MSG_MAX.."\nLock Spam: "..settings.lock_spam.."\nLock Arabic: "..settings.lock_arabic.."\nLock Member: "..settings.lock_member.."\nLock RTL: "..settings.lock_rtl.."\nLock Tgservice : "..settings.lock_tgservice.."\nLock Sticker: "..settings.lock_sticker.."\nSuperGroup Public: "..settings.public.."\nStrict Settings: "..settings.strict.."\nLock Tag: "..settings.lock_tag.."\nLock Media: "..settings.lock_media
   return text
 end
 
